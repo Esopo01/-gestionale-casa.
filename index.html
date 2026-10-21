@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2c6b5a">
+  <meta name="robots" content="noindex">
+  <title>Gestionale casa</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+  <div id="banner" class="banner nascosto" role="alert"></div>
+
+  <header class="testata">
+    <h1 id="titolo">Gestionale casa</h1>
+    <span class="marchio">Gestionale casa</span>
+  </header>
+
+  <nav class="navigazione" id="navigazione" aria-label="Sezioni"></nav>
+
+  <main id="contenuto" tabindex="-1">
+    <noscript><p>Per usare il Gestionale casa serve JavaScript attivo nel browser.</p></noscript>
+    <p class="tenue">Caricamento…</p>
+  </main>
+
+  <button type="button" class="fab" data-azione="spesa-rapida" aria-label="Registra una spesa">+ Spesa</button>
+
+  <div id="messaggi" aria-live="polite"></div>
+
+  <!-- Logica: funzioni pure, senza DOM (testate con node --test) -->
+  <script src="js/logica/base.js"></script>
+  <script src="js/logica/importi.js"></script>
+  <script src="js/logica/date.js"></script>
+  <script src="js/logica/schema.js"></script>
+  <script src="js/logica/archivio.js"></script>
+  <script src="js/logica/csv.js"></script>
+  <script src="js/logica/movimenti.js"></script>
+  <script src="js/logica/bollette.js"></script>
+  <script src="js/logica/lavori.js"></script>
+  <script src="js/logica/personale.js"></script>
+  <script src="js/logica/animali.js"></script>
+  <script src="js/logica/impegni.js"></script>
+  <script src="js/logica/ics.js"></script>
+  <script src="js/logica/energia.js"></script>
+  <script src="js/logica/importa-energia.js"></script>
+  <script src="js/logica/controlli.js"></script>
+  <script src="js/logica/demo.js"></script>
+  <!-- Salvataggio: l'unico file che scrive nello spazio del browser -->
+  <script src="js/salvataggio.js"></script>
+  <!-- Interfaccia -->
+  <script src="js/interfaccia/ui.js"></script>
+  <script src="js/interfaccia/stato.js"></script>
+  <script src="js/interfaccia/grafici.js"></script>
+  <script src="js/interfaccia/viste/home.js"></script>
+  <script src="js/interfaccia/viste/movimenti.js"></script>
+  <script src="js/interfaccia/viste/lavori.js"></script>
+  <script src="js/interfaccia/viste/personale.js"></script>
+  <script src="js/interfaccia/viste/animali.js"></script>
+  <script src="js/interfaccia/viste/impegni.js"></script>
+  <script src="js/interfaccia/viste/energia.js"></script>
+  <script src="js/interfaccia/viste/impostazioni.js"></script>
+  <script src="js/interfaccia/app.js"></script>
+</body>
+</html>
