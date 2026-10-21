@@ -337,6 +337,7 @@
     var valori = {};
     ['verso', 'categoriaId', 'sottocategoriaId', 'collegamentoTipo', 'collegamentoId', 'stato', 'competenza', 'importo', 'controparte']
       .forEach(function (k) { if (dati[k]) { valori[k] = dati[k]; } });
+    if (dati.detraibile) { valori.detraibile = true; }
     apriMovimento(valori);
   };
 
@@ -380,11 +381,13 @@
 
   // --- Registro ---
 
-  function rigaMovimento(m, mostraData) {
+  // Riga di un movimento; opzioni.senzaCollegamento nelle schede dell'elemento collegato.
+  function rigaMovimento(m, opzioni) {
+    opzioni = opzioni || {};
     var cat = M.nomeCategoria(categorie(), m.categoriaId, m.sottocategoriaId);
     var titolo = m.controparte || m.note || cat;
-    var sotto = [mostraData === false ? '' : D.formattaData(m.data), cat];
-    var collegamento = A.nomeCollegamento(archivio(), m.collegamento);
+    var sotto = [D.formattaData(m.data), cat];
+    var collegamento = opzioni.senzaCollegamento ? '' : A.nomeCollegamento(archivio(), m.collegamento);
     if (collegamento && m.collegamento.tipo !== 'bolletta') { sotto.push(collegamento); }
     var nomeSotto = m.sottocategoriaId ? (A.trova(archivio(), 'categorie', m.sottocategoriaId) || {}).nome : '';
     if (m.controparte && m.note && m.note !== nomeSotto) { sotto.push(m.note); }

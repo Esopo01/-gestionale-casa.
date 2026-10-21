@@ -120,6 +120,7 @@
       b.addEventListener('click', function () { el.remove(); o.azione.esegui(); });
       el.appendChild(b);
     }
+    while (contenitore.children.length >= 2) { contenitore.removeChild(contenitore.firstChild); }
     contenitore.appendChild(el);
     setTimeout(function () { el.remove(); }, o.durata || (o.tipo === 'errore' ? 7000 : 4500));
   }

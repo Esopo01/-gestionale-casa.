@@ -112,7 +112,7 @@
       { id: 'tredicesima', nome: 'Tredicesima' }, { id: 'tfr', nome: 'TFR' }] },
     { id: 'animali', nome: 'Animali', verso: 'uscita', ruolo: 'animali', sotto: [
       { id: 'cibo', nome: 'Cibo' }, { id: 'veterinario', nome: 'Veterinario', ruolo: 'veterinario' },
-      { id: 'farmaci', nome: 'Farmaci' }, { id: 'toelettatura', nome: 'Toelettatura' },
+      { id: 'farmaci', nome: 'Farmaci', ruolo: 'farmaci' }, { id: 'toelettatura', nome: 'Toelettatura' },
       { id: 'assicurazione', nome: 'Assicurazione' }] },
     { id: 'energia', nome: 'Energia', verso: 'entrambi', ruolo: 'energia', sotto: [
       { id: 'manutenzione', nome: 'Manutenzione impianto', verso: 'uscita' },
