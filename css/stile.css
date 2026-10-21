@@ -519,7 +519,7 @@ table.tabella tr.cliccabile:hover { background: var(--superficie-2); }
 /* --- Grafici SVG --- */
 
 .grafico { width: 100%; overflow-x: auto; }
-.grafico svg { display: block; width: 100%; height: auto; min-width: 320px; }
+.grafico svg { display: block; width: 100%; height: auto; }
 .grafico text { fill: var(--tenue); font-size: 11px; font-family: inherit; }
 .grafico .asse { stroke: var(--bordo); }
 .grafico .serie-1 { fill: var(--grafico-1); }

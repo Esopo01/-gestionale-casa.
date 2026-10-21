@@ -15,6 +15,7 @@
   var P = GC.personale || require('./personale.js');
   var IM = GC.impegni || require('./impegni.js');
   var S = GC.schema || require('./schema.js');
+  var E = GC.energia || require('./energia.js');
 
   var TIPI = {
     'impegno-scaduto': 'Impegni scaduti',
@@ -118,6 +119,11 @@
     return avvisi;
   }
 
+  // Produzione del fotovoltaico sotto la soglia di quella attesa (o dell'anno prima).
+  function produzione(archivio, oggi) {
+    return E.controlloProduzione(archivio, oggi);
+  }
+
   function backup(archivio, oggi) {
     if (A.eVuoto(archivio)) { return []; }
     var giorni = archivio.impostazioni.soglie.backupGiorni;
@@ -135,7 +141,7 @@
   }
 
   // Elenco dei controlli: ogni sezione aggiunge qui il proprio.
-  var CONTROLLI = [impegniScaduti, previstiScaduti, bollette, lavori, personale, backup];
+  var CONTROLLI = [impegniScaduti, previstiScaduti, bollette, lavori, personale, produzione, backup];
 
   function esegui(archivio, oggi) {
     var avvisi = [];
@@ -168,6 +174,7 @@
     bollette: bollette,
     lavori: lavori,
     personale: personale,
+    produzione: produzione,
     backup: backup
   };
 

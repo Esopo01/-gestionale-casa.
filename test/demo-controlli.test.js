@@ -7,7 +7,7 @@ const A = require('../js/logica/archivio.js');
 const S = require('../js/logica/schema.js');
 
 const ORA = '2026-10-21T10:00:00.000Z';
-const TUTTI_I_CONTROLLI = ['impegno-scaduto', 'previsto-scaduto', 'bolletta', 'lavoro', 'personale', 'backup'];
+const TUTTI_I_CONTROLLI = ['impegno-scaduto', 'previsto-scaduto', 'bolletta', 'lavoro', 'personale', 'produzione', 'backup'];
 
 for (const oggi of ['2026-10-21', '2027-03-01', '2026-07-31', '2028-02-29']) {
   test('dati di prova con oggi = ' + oggi + ': almeno un avviso per ogni controllo', () => {
